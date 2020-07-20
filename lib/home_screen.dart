@@ -34,28 +34,37 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Sample App"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(
-              child: Text("Pick Date"),
-              onPressed: () async {
-                await _selectDate(context);
-                print("selected Date is " + _selectedDate);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => LoadingScreen(
-                            selectedDate: _selectedDate,
-                          )),
-                );
-              },
-            )
-          ],
+//      appBar: AppBar(
+//        title: Text("Sample App"),
+//      ),
+      body: Container(
+        constraints: BoxConstraints.expand(),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: NetworkImage(
+                    "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
+                colorFilter: ColorFilter.mode(Colors.black26, BlendMode.darken),
+                fit: BoxFit.cover)),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RaisedButton(
+                child: Text("Pick Date"),
+                onPressed: () async {
+                  await _selectDate(context);
+                  print("selected Date is " + _selectedDate);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LoadingScreen(
+                              selectedDate: _selectedDate,
+                            )),
+                  );
+                },
+              )
+            ],
+          ),
         ),
       ),
     );
