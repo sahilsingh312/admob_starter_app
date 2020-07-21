@@ -40,8 +40,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: NetworkImage(
-                    "https://images.unsplash.com/photo-1502920514313-52581002a659?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80"),
+                image: AssetImage('assets/callings-of-night.png'),
                 colorFilter: ColorFilter.mode(Colors.black26, BlendMode.darken),
                 fit: BoxFit.cover)),
         child: Center(

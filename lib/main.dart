@@ -11,9 +11,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+          primarySwatch: Colors.indigo,
+          accentColor: Colors.white,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          fontFamily: 'Varela',
+          ),
       home: HomeScreen(),
     );
   }

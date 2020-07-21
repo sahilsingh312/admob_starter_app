@@ -41,16 +41,17 @@ class _HomeScreenState extends State<HomeScreen> {
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: NetworkImage(
-                    "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
+                image: AssetImage('assets/callings-of-night.png'),
                 colorFilter: ColorFilter.mode(Colors.black26, BlendMode.darken),
                 fit: BoxFit.cover)),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Text('Get Currency Rates', style: TextStyle(fontSize: 36, color: Colors.white),),
+              SizedBox(height: 32,),
               RaisedButton(
-                child: Text("Pick Date"),
+                child: Text("Choose Date", style: TextStyle(fontSize: 18),),
                 onPressed: () async {
                   await _selectDate(context);
                   print("selected Date is " + _selectedDate);
